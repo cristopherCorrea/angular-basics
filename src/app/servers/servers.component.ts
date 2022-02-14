@@ -5,8 +5,9 @@ import { Component, OnInit } from '@angular/core';
   //selector: '.app-servers', adding this component by class
   selector: '[app-servers]',  //using a component by property
   //you can use template instead of templateUrl to write the html, use it only if the html is shot ``for many lines ''only one line html
-  template: `<p>servers works with template!</p>
-  <app-server></app-server>`,
+  //template: `<p>servers works with template!</p>
+  //<app-server></app-server>`,
+  templateUrl: './servers.component.html',
   styles: [`
     p {
       color: blue;
@@ -15,7 +16,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
-  constructor() { }
+  allowNewServer = false;
+
+  constructor() { 
+    setTimeout(() => {this.allowNewServer = true}, 2000);
+  }
 
   ngOnInit(): void {
   }
