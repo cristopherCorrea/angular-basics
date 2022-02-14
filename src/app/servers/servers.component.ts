@@ -5,7 +5,11 @@ import { Component, OnInit } from '@angular/core';
   //you can use template instead of templateUrl to write the html, use it only if the html is shot ``for many lines ''only one line html
   template: `<p>servers works with template!</p>
   <app-server></app-server>`,
-  styleUrls: ['./servers.component.css']
+  styles: [`
+    p {
+      color: blue;
+    }`
+  ] 
 })
 export class ServersComponent implements OnInit {
 
