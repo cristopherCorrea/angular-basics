@@ -3,6 +3,12 @@
     type = "text"
     class = "form-control"
     (input)="onUpdateServerName($event)">
+<!-- Notice that when serverName change the value this input changes 
+    too because NgModel works in both directions (this not happens with the other input) -->
+    <input
+    type = "text"
+    class="form-control"
+    [(ngModel)]="serverName">
 <p>{{ serverName }}</p>
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="createServer()">Add new server</button>
 <p [innerText]="allowNewServer"></p>
