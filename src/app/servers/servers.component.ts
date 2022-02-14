@@ -17,12 +17,17 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
 
   allowNewServer = false;
+  newServer = "server not created";
 
   constructor() { 
     setTimeout(() => {this.allowNewServer = true}, 2000);
   }
 
   ngOnInit(): void {
+  }
+
+  createServer() {
+    this.newServer = "Server Created!!";
   }
 
 }
