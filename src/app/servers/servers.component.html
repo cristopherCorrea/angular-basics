@@ -12,9 +12,14 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="createServer()">Add new server</button>
 <p [innerText]="allowNewServer"></p>
 <p> {{ newServer }}</p>
-<app-server></app-server>
 
+<!-- The * before the directive is because can modify the DOM. I mean is a structural directive-->
+<p *ngIf="serverCreated; else noServer"> The new Server {{ serverName }} was created!!</p>
+<ng-template #noServer>
+    <p>Server not created Yet</p>
+</ng-template>
 
+<app-server *ngFor="let server of serverList"></app-server>
 <h3>Assigment</h3>
 
 <input
