@@ -20,7 +20,7 @@
 </ng-template>
 
 <app-server *ngFor="let server of serverList"></app-server>
-<h3>Assigment</h3>
+<h3>Assigment 2</h3>
 
 <input
     type="text"
@@ -32,3 +32,13 @@
     class="btn btn-primary"
     [disabled]="!(userName !== '')"
     (click)="cleanUserName()">Clear Name</button>
+
+
+<h3>Assigment 3</h3>
+
+<button
+    class="btn btn-primary"
+    (click)="switchMessageDisplay()">Display details</button>
+
+<p *ngIf="displayMessage">This is the secret Message</p>
+<p *ngFor="let time of timeClickedList; let i = index" [ngStyle]="{backgroundColor : i > 5 ? 'blue' : 'white'}" [ngClass]="{wColor: i > 5}">{{ time }}</p>

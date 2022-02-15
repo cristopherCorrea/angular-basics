@@ -8,11 +8,7 @@ import { Component, OnInit } from '@angular/core';
   //template: `<p>servers works with template!</p>
   //<app-server></app-server>`,
   templateUrl: './servers.component.html',
-  styles: [`
-    p {
-      color: blue;
-    }`
-  ] 
+  styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
 
@@ -22,6 +18,8 @@ export class ServersComponent implements OnInit {
   userName = "";
   serverCreated = false;
   serverList = ["server1", "server2", "server3"];
+  displayMessage = false;
+  timeClickedList = [];
 
   constructor() { 
     setTimeout(() => {this.allowNewServer = true}, 2000);
@@ -44,4 +42,9 @@ export class ServersComponent implements OnInit {
     this.userName = "";
   }
 
+  switchMessageDisplay() {
+    this.displayMessage = !this.displayMessage;
+    this.timeClickedList.push(Date.now());
+    this.timeClickedList.length
+  }
 }
